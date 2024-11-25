@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript 연습문제</title>
+</head>
+<body>
+    <h1>JavaScript 연습문제 실행 결과</h1>
+    <script>
+        // 11번 문제
+        console.log(10 + 20 + "!!!!!"); // 출력: "30!!!!!"
+        var number = 10;
+        console.log(number + 1); // 출력: 11
+        console.log(number + 2); // 출력: 12
+        console.log(number + 3); // 출력: 13
+
+        var test = function () {
+            return 10;
+        };
+        function test() {
+            return 20;
+        }
+        console.log(test); // 출력: function test() { return 20; }
+
+        // 13번 문제 - 논리 연산자를 사용해 if 조건문 변경
+        var x = 15;
+        if (x > 10 && x < 20) {
+            console.log(x); // 조건을 만족하면 출력
+        }
+
+        // 14번 문제 - for 반복문을 while 반복문으로 변경
+        var i = 1;
+        while (i <= 10) {
+            if (i % 5 === 0) {
+                console.log(i); // 출력: 5, 10
+            }
+            i++;
+        }
+
+        // 15번 문제 - while 반복문을 for 반복문으로 변경
+        for (var i = 10; i >= 0; i -= 3) {
+            console.log(i); // 출력: 10, 7, 4, 1
+        }
+
+        // 16번 문제 - 센티미터를 입력받아 피트(ft)와 인치(inch)로 변환
+        var cm = prompt("센티미터를 입력하세요:");
+        var feet = parseInt(cm / 30.48); // 피트 계산
+        var inches = parseInt((cm / 2.54) % 12); // 인치 계산
+        alert(cm + "cm는 " + feet + "ft " + inches + "inch입니다.");
+
+        // 17번 문제 - 원기둥의 부피 계산
+        var radius = prompt("반지름을 입력하세요:");
+        var height = prompt("높이를 입력하세요:");
+        var volume = 3.141592 * radius * radius * height; // 부피 계산
+        alert("원기둥의 부피는 " + parseInt(volume) + "입니다.");
+
+        // 18번 문제 - 네 자리 정수를 자리별로 분리
+        var input = prompt("네 자리 정수를 입력하세요:");
+        var thousand = parseInt(input / 1000);
+        var hundred = parseInt((input % 1000) / 100);
+        var ten = parseInt((input % 100) / 10);
+        var one = input % 10;
+        alert(
+            "천의 자리: " +
+                thousand +
+                ", 백의 자리: " +
+                hundred +
+                ", 십의 자리: " +
+                ten +
+                ", 일의 자리: " +
+                one
+        );
+
+        // 19번 문제 - 연도를 입력받아 띠를 출력
+        var zodiacArray = ["원숭이", "닭", "개", "돼지", "쥐", "소", "호랑이", "토끼", "용", "뱀", "말", "양"];
+        var year = prompt("연도를 입력하세요:");
+        var zodiacIndex = year % 12;
+        alert(year + "년은 " + zodiacArray[zodiacIndex] + "띠입니다.");
+
+        // 20번 문제 - 별 패턴 출력
+        var result = "";
+        for (var i = 1; i <= 8; i++) {
+            for (var j = 1; j <= i; j++) {
+                result += "*";
+            }
+            result += "\n";
+        }
+        console.log(result);
+
+        // 21번 문제 - 팩토리얼 계산 함수
+        function factorial(n) {
+            var result = 1;
+            for (var i = 1; i <= n; i++) {
+                result = result * i;
+            }
+            return result;
+        }
+        var num = prompt("숫자를 입력하세요:");
+        alert(num + "! = " + factorial(num));
+
+        // 22번 문제 - 객체 생성
+        var book = {
+            이름: "C# 프로그래밍 (2판)",
+            초판발행: "2021년 1월 5일",
+            지은이: "윤인성",
+            퍼내미: "전대호",
+            퍼낸곳: "한빛아카데미(주)"
+        };
+        console.log(book);
+    </script>
+</body>
+</html>
